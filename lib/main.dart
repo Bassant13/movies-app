@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+import 'core/colors.dart';
 import 'core/themes/dark_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
 
       },
 
-      home: Scaffold(body: const Center(child: Text('Movies App'))),
+      home: Scaffold(body: const Center(child: Text('Movies App',style: TextStyle(color: AppColors.white),))),
     );
   }
 }
