@@ -6,5 +6,6 @@ class AppColors{
   static const yellow = Color(0xffF6BD00);
   static const red = Color(0xffE82626);
   static const darkGray = Color(0xff282A28);
+  static const lowOpacityBlack = Color(0xB5111211);
 
 }
