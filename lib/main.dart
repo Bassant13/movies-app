@@ -1,5 +1,8 @@
+
 import 'package:flutter/material.dart';
-import 'core/colors.dart';
+import 'package:movies_app/ui/screens/edit_profile_screen.dart';
+import 'package:movies_app/ui/screens/home/tabs/browse_tab/browse_tab.dart';
+import 'package:movies_app/ui/screens/home/tabs/profile_tab/profile_tab.dart';
 import 'core/themes/dark_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -20,9 +23,12 @@ class  MyApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale('en'),
       routes: {
+        ProfileTab.routeName: (context) =>  ProfileTab(),
+        EditProfileScreen.routeName: (context) =>   EditProfileScreen(),
+        BrowseTab.routeName: (context) =>   BrowseTab(),
 
       },
-     home: Scaffold(body: const Center(child: Text('Movies App',style: TextStyle(color: AppColors.white),))),
+     initialRoute: ProfileTab.routeName,
     );
   }
 }

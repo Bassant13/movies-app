@@ -4,6 +4,14 @@ import 'package:movies_app/core/colors.dart';
 ThemeData get darkTheme{
   return ThemeData(
     scaffoldBackgroundColor: AppColors.black,
+    appBarTheme: const  AppBarTheme(
+      backgroundColor:  AppColors.black,
+      foregroundColor: AppColors.yellow,
+      titleTextStyle: TextStyle(
+        fontSize: 16,
+        color: AppColors.yellow
+      )
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 15)),
@@ -40,6 +48,21 @@ ThemeData get darkTheme{
        color: AppColors.white,
        fontSize: 16,
        fontWeight: FontWeight.w400,
+     ),
+     labelLarge: TextStyle(
+       color: AppColors.white,
+       fontWeight: FontWeight.bold,
+       fontSize: 30
+   ),
+     labelMedium: TextStyle(
+         color: AppColors.white,
+         fontWeight: FontWeight.bold,
+         fontSize: 20
+     ),
+     labelSmall: TextStyle(
+         color: AppColors.white,
+         fontWeight: FontWeight.bold,
+         fontSize: 18
      ),
    )
   );

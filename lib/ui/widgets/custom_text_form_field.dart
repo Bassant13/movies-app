@@ -3,13 +3,16 @@ import 'package:movies_app/core/colors.dart';
 
 class CustomTextFormField extends StatefulWidget{
   String hint;
+  String? text;
   String? Function(String?)? validator;
   TextEditingController controller ;
   IconData iconName;
   bool isPassword;
 
   CustomTextFormField({
+    super.key,
     required this.hint,
+    this.text,
     required this.controller,
     this.validator,
     this.isPassword = false,
