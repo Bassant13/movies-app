@@ -10,12 +10,12 @@ class CustomOutlinedButton extends StatelessWidget{
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(AppColors.black),
-          foregroundColor: MaterialStateProperty.all(AppColors.yellow),
+          backgroundColor: MaterialStateProperty.all(AppColors.primary),
+          foregroundColor: MaterialStateProperty.all(AppColors.button),
           side: MaterialStateProperty.all(
               BorderSide(
                 width: 2,
-                color: AppColors.yellow
+                color: AppColors.button
               )
           )
         ),

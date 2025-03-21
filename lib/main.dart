@@ -1,30 +1,50 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'core/colors.dart';
+import 'package:movies_app/routs.dart';
+import 'core/class/app_rout.dart';
 import 'core/themes/dark_theme.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'firebase_options.dart';
+import 'function/check_auth.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final auth = await CheckAuth.init();
+  await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(EasyLocalization(
+    supportedLocales: [
+      Locale("en"),
+      Locale("ar"),
+    ],
+    path: "assets/translations",
+    fallbackLocale: Locale("en"),
+    child: MyApp(
+      auth: auth,
+    ),
+  ));
 }
 
-class  MyApp extends StatelessWidget {
-   const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  final CheckAuth auth;
+  const MyApp({super.key, required this.auth});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Movies App',
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
-      darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('en'),
-      routes: {
-
-      },
-     home: Scaffold(body: const Center(child: Text('Movies App',style: TextStyle(color: AppColors.white),))),
+      theme: appTheme,
+      initialRoute: auth.skipOnBoarding == false
+          ? AppRouts.onBoarding
+          : auth.isLogin == false
+          ? AppRouts.login
+          : AppRouts.bottonNavigator,
+      routes: routs,
     );
   }
 }
-
-

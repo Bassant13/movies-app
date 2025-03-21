@@ -58,7 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         ),
         focusedBorder: InputBorder.none,
         filled: true,
-        fillColor: AppColors.darkGray,
+        fillColor: AppColors.textThird,
       ),
 
     );
