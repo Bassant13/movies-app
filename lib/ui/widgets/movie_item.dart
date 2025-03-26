@@ -44,7 +44,11 @@ class MovieItem extends StatelessWidget{
                   const Icon(
                     Icons.star_rounded,
                     size: 22,
-                    color: AppColors.yellow,
+
+                    color: AppColors.button,
+
+                 //   color: AppColors.yellow,
+
                   )
                 ],
               ),
