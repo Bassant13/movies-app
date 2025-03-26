@@ -23,7 +23,7 @@ class MoviesListView extends StatelessWidget{
           crossAxisSpacing: 10,
           childAspectRatio: .6
       ),
-      itemCount: 6,
+     // itemCount: 6,
         itemBuilder: (context,index){
           return MovieItem(
               rate: rate,
