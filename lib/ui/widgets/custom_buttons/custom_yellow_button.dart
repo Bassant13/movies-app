@@ -10,8 +10,8 @@ class CustomYellowButton extends StatelessWidget{
   Widget build(BuildContext context) {
     return ElevatedButton(
        style: ButtonStyle(
-         backgroundColor: MaterialStateProperty.all(AppColors.yellow),
-         foregroundColor: MaterialStateProperty.all(AppColors.black),
+         backgroundColor: MaterialStateProperty.all(AppColors.button),
+         foregroundColor: MaterialStateProperty.all(AppColors.primary),
 
        ),
         onPressed: onClick,

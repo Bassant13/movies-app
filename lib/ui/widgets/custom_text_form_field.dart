@@ -26,19 +26,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: Theme.of(context).textTheme.bodyMedium!.color,
+      cursorColor: Theme.of(context).textTheme.displayMedium!.color,
       controller: widget.controller,
       validator: widget.validator,
       obscureText: widget.isPassword? !isVisible : false,
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: Theme.of(context).textTheme.displayMedium,
 
       decoration: InputDecoration(
         hintText: widget.hint,
-        hintStyle: Theme.of(context).textTheme.bodyMedium,
+        hintStyle: Theme.of(context).textTheme.displayMedium,
         prefixIcon: Icon(
           widget.iconName,
           size: 25,
-          color: Theme.of(context).textTheme.bodyMedium!.color,
+          color: Theme.of(context).textTheme.displayMedium!.color,
         ),
 
         suffixIcon: widget.isPassword? IconButton(
@@ -49,7 +49,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           },
           icon: Icon(isVisible? Icons.visibility : Icons.visibility_off,
             size: 25,
-            color: Theme.of(context).textTheme.bodyMedium!.color,
+            color: Theme.of(context).textTheme.displayMedium!.color,
           )
           ,) : null,
         enabledBorder:  OutlineInputBorder(
@@ -58,7 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         ),
         focusedBorder: InputBorder.none,
         filled: true,
-        fillColor: AppColors.darkGray,
+        fillColor: AppColors.textThird,
       ),
 
     );
