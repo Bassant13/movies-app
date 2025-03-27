@@ -174,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           UserCredential userCredential = await FirebaseManager.signInWithGoogle();
                           if (userCredential.user != null) {
                             print("Google Sign-In successful: ${userCredential.user!.email}");
-                            Navigator.pushReplacementNamed(context, AppRouts.home);
+                            Navigator.pushReplacementNamed(context, AppRouts.mainScreen);
                           } else {
                             print("Google Sign-In failed");
                           }
@@ -187,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           try {
                             UserCredential userCredential = await FirebaseManager.signInWithGoogle();
                             if (userCredential.user != null) {
-                              Navigator.pushReplacementNamed(context, AppRouts.home);
+                              Navigator.pushReplacementNamed(context, AppRouts.mainScreen);
                             } else {
                               print("Google Sign-In failed");
                             }

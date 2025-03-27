@@ -8,5 +8,5 @@ class AppRouts {
   static const home = '/home';
   static const String editProfile = '/edit profile';
   static const String profile = '/profile tab';
-
+  static const String mainScreen = '/main screen';
 }

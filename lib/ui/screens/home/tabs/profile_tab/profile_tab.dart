@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:movies_app/core/app_assets/app_images/images.dart';
 import 'package:movies_app/core/class/app_rout.dart';
 import 'package:movies_app/core/colors.dart';
 import 'package:movies_app/l10n/translation.dart';
@@ -45,15 +46,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   Container(
                     color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
                   ),
-                  StreamBuilder<DocumentSnapshot>(
-                      stream: FirebaseFirestore.instance
-                      .collection("users")
-                      .doc(currentUser?.email)
-                      .snapshots(),
-                      builder: (context,snapshot){
-                        if(snapshot.hasData){
-                          final userData = snapshot.data!.data() as Map<String,dynamic>;
-                          return                   Padding(
+                      Padding(
                             padding: EdgeInsets.fromLTRB(16,30,16,0),
                             child: Column(
                               children: [
@@ -63,7 +56,15 @@ class _ProfileTabState extends State<ProfileTab> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Expanded(
-                                        child: Column(
+                                        child: StreamBuilder<DocumentSnapshot>(
+                                            stream: FirebaseFirestore.instance
+                                                .collection("users")
+                                                .doc(currentUser?.email)
+                                                .snapshots(),
+                                            builder: (context,snapshot){
+                                              if(snapshot.hasData){
+                                                final userData = snapshot.data!.data() as Map<String,dynamic>;
+                                                return Column(
                                           children: [
                                             Expanded(
                                               flex: 3,
@@ -77,7 +78,12 @@ class _ProfileTabState extends State<ProfileTab> {
                                                 )
                                             )
                                           ],
-                                        ),
+                                        );
+                          }else if(snapshot.hasError){
+                            return Center(child: Text(snapshot.error.toString()),);
+                          }return Center(child: CircularProgressIndicator(),);
+                        }
+                  )
                                       ),
                                       Expanded(
                                         child: Column(
@@ -204,17 +210,21 @@ class _ProfileTabState extends State<ProfileTab> {
                                 )
                               ],
                             ),
-                          );
-                        }else if(snapshot.hasError){
-                          return Center(child: Text(snapshot.error.toString()),);
-                        }return Center(child: CircularProgressIndicator(),);
-                      }
-                  )
+                          ),
+                  //       }else if(snapshot.hasError){
+                  //         return Center(child: Text(snapshot.error.toString()),);
+                  //       }return Center(child: CircularProgressIndicator(),);
+                  //     }
+                  // )
 
                 ],
               ),
             ),
-            Expanded(child: Text(''),flex: 1,)
+            Expanded(
+              child: Center(
+                child: Image.asset(AppImages.empty),
+              ),
+            )
           ],
         ),
       ),

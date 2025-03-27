@@ -29,6 +29,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
+                 // Navigator.pushNamed(context, AppRouts.restPass);
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 14),

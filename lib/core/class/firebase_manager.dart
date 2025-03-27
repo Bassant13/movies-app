@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../model/user_model.dart';
+import '../movieassets/movie_model.dart';
 
 class FirebaseManager {
   static Future<void> createAccount(
@@ -102,5 +103,4 @@ class FirebaseManager {
     await docRef.set(user);
     print("User added to Firestore: ${user.email}");
   }
-
 }

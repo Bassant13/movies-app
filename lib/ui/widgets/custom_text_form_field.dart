@@ -33,7 +33,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       validator: widget.validator,
       obscureText: widget.isPassword? !isVisible : false,
       style: Theme.of(context).textTheme.displayMedium,
-
+      initialValue: widget.text,
       decoration: InputDecoration(
         hintText: widget.hint,
         hintStyle: Theme.of(context).textTheme.displayMedium,
