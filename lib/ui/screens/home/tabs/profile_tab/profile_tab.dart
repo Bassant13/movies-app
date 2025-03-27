@@ -1,6 +1,4 @@
 
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +10,6 @@ import 'package:movies_app/ui/widgets/custom_buttons/custom_yellow_button.dart';
 import '../../../../../core/app_assets/app_icons/app_icons.dart';
 import '../../../../widgets/custom_buttons/custom_red_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../../edit_profile_screen.dart';
 
 class ProfileTab extends StatefulWidget{
   ProfileTab({super.key});

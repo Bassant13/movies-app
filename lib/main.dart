@@ -14,8 +14,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(
-      EasyLocalization(
+  runApp(EasyLocalization(
     supportedLocales: [
       Locale("en"),
       Locale("ar"),
@@ -43,8 +42,8 @@ class MyApp extends StatelessWidget {
       initialRoute: auth.skipOnBoarding == false
           ? AppRouts.onBoarding
           : auth.isLogin == false
-          ? AppRouts.login
-          : AppRouts.bottonNavigator,
+              ? AppRouts.login
+              : AppRouts.bottonNavigator,
       routes: routs,
     );
   }

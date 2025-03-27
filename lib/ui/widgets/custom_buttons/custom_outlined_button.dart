@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/colors.dart';
 
+// ignore: must_be_immutable
 class CustomOutlinedButton extends StatelessWidget{
   String text;
   Widget? widget;
