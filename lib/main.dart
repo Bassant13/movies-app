@@ -34,6 +34,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+//     return ChangeNotifierProvider(
+//       create: (context) => MoviesViewModel(),
+//       child: MaterialApp(
+//         title: 'Movies App',
+//         debugShowCheckedModeBanner: false,
+//         darkTheme: darkTheme,
+//         themeMode: ThemeMode.dark,
+//         localizationsDelegates: AppLocalizations.localizationsDelegates,
+//         supportedLocales: AppLocalizations.supportedLocales,
+//         locale: Locale('en'),
+//         routes: {
+      
+//         },
+//        home:MainScreen()
+//       ),
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

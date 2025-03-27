@@ -34,6 +34,7 @@ dependencies:
     sdk: flutter
   intl: any
   provider: ^6.1.2
+  carousel_slider: ^5.0.0
   flutter_native_splash:
   overlapped_carousel:
   firebase_core:
