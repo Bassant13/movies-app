@@ -3,6 +3,7 @@ import 'package:movies_app/core/colors.dart';
 
 class CustomTextFormField extends StatefulWidget{
   String hint;
+  String? text;
   String? Function(String?)? validator;
   TextEditingController controller ;
   IconData iconName;
@@ -10,6 +11,7 @@ class CustomTextFormField extends StatefulWidget{
 
   CustomTextFormField({
     required this.hint,
+    this.text,
     required this.controller,
     this.validator,
     this.isPassword = false,
@@ -26,19 +28,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: Theme.of(context).textTheme.bodyMedium!.color,
+      cursorColor: Theme.of(context).textTheme.displayMedium!.color,
       controller: widget.controller,
       validator: widget.validator,
       obscureText: widget.isPassword? !isVisible : false,
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: Theme.of(context).textTheme.displayMedium,
 
       decoration: InputDecoration(
         hintText: widget.hint,
-        hintStyle: Theme.of(context).textTheme.bodyMedium,
+        hintStyle: Theme.of(context).textTheme.displayMedium,
         prefixIcon: Icon(
           widget.iconName,
           size: 25,
-          color: Theme.of(context).textTheme.bodyMedium!.color,
+          color: Theme.of(context).textTheme.displayMedium!.color,
         ),
 
         suffixIcon: widget.isPassword? IconButton(
@@ -49,7 +51,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           },
           icon: Icon(isVisible? Icons.visibility : Icons.visibility_off,
             size: 25,
-            color: Theme.of(context).textTheme.bodyMedium!.color,
+            color: Theme.of(context).textTheme.displayMedium!.color,
           )
           ,) : null,
         enabledBorder:  OutlineInputBorder(
